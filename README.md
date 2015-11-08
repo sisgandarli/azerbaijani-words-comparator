@@ -18,7 +18,7 @@ for (String n : words)
 
 we will see the followig output:
 
-Akif
+Akif\n
 Arzu
 Bədəl
 Mələk
