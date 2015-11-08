@@ -9,14 +9,7 @@ They you need to use sort method which accepts array of String objects and Compa
 
 Arrays.sort(words, new AzerbaijaniWordsComparator());
 
-When we will print elements of arrays using this for loop
-
-for (String n : words) 
-{
-  System.out.println(n); 
-}
-
-we will see the followig output:
+When we will print elements of arrays using this for loop, we will see the followig output:
 
 Akif
 Arzu
