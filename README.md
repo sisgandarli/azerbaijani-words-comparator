@@ -3,7 +3,9 @@ This is Comparator for sorting words in Azerbaijani language in ascending lexico
 # How to Use It?
 The idea is very simple! Imagine you created an array of String objects which are only in Azerbaijani language, for example,
 
-```java String[] words = {"Şahnur", "Bədəl", "Akif", "Murad", "Namiq", "Mələk", "Arzu"};```
+```java 
+String[] words = {"Şahnur", "Bədəl", "Akif", "Murad", "Namiq", "Mələk", "Arzu"};
+```
 
 They you need to use sort method which accepts array of String objects and Comparator as arguments using Arrays class from standart Java libraries!
 
