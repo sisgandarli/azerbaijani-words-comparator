@@ -3,14 +3,14 @@ import java.util.Comparator;
 
 public class AzerbaijaniWordsComparator implements Comparator<String> {
 
-    private static final char[] lowerCaseLetters = {
+    private final char[] lowerCaseLetters = {
         'a', 'b', 'c', 'ç', 'd', 'e', 'ə', 'f', 'g', 'ğ', 'h', 'x', 'ı', 'i', 'j', 'k', 'q', 'l', 'm', 'n', 'o', 'ö', 'p', 'r', 's', 'ş', 't', 'u', 'ü', 'v', 'y', 'z'
     };
-    private static final char[] upperCaseLetters = {
+    private final char[] upperCaseLetters = {
         'A', 'B', 'C', 'Ç', 'D', 'E', 'Ə', 'F', 'G', 'Ğ', 'H', 'X', 'I', 'İ', 'J', 'K', 'Q', 'L', 'M', 'N', 'O', 'Ö', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'Y', 'Z'
     };
 
-    private static final int findIndexOfLowerCaseLetter(char a) {
+    private final int findIndexOfLowerCaseLetter(char a) {
         for (int i = 0; i < lowerCaseLetters.length; i++) {
             if (lowerCaseLetters[i] == a) {
                 return i;
@@ -19,7 +19,7 @@ public class AzerbaijaniWordsComparator implements Comparator<String> {
         return -1;
     }
 
-    private static final int findIndexOfUpperCaseLetter(char a) {
+    private final int findIndexOfUpperCaseLetter(char a) {
         for (int i = 0; i < upperCaseLetters.length; i++) {
             if (upperCaseLetters[i] == a) {
                 return i;
