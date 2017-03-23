@@ -5,7 +5,7 @@ public class AzerbaijaniWordsComparator implements Comparator<String> {
 
     private final String lowerCaseLetters = "abcçdeəfgğhxıijkqlmnoöprsştuüvyz";
     private final String upperCaseLetters = "ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ";
-
+    
     @Override
     public int compare(String a, String b) {
         if (a.length() == b.length()) {
