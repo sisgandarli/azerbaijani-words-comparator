@@ -3,30 +3,8 @@ import java.util.Comparator;
 
 public class AzerbaijaniWordsComparator implements Comparator<String> {
 
-    private final char[] lowerCaseLetters = {
-        'a', 'b', 'c', 'ç', 'd', 'e', 'ə', 'f', 'g', 'ğ', 'h', 'x', 'ı', 'i', 'j', 'k', 'q', 'l', 'm', 'n', 'o', 'ö', 'p', 'r', 's', 'ş', 't', 'u', 'ü', 'v', 'y', 'z'
-    };
-    private final char[] upperCaseLetters = {
-        'A', 'B', 'C', 'Ç', 'D', 'E', 'Ə', 'F', 'G', 'Ğ', 'H', 'X', 'I', 'İ', 'J', 'K', 'Q', 'L', 'M', 'N', 'O', 'Ö', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'Y', 'Z'
-    };
-
-    private final int findIndexOfLowerCaseLetter(char a) {
-        for (int i = 0; i < lowerCaseLetters.length; i++) {
-            if (lowerCaseLetters[i] == a) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    private final int findIndexOfUpperCaseLetter(char a) {
-        for (int i = 0; i < upperCaseLetters.length; i++) {
-            if (upperCaseLetters[i] == a) {
-                return i;
-            }
-        }
-        return -1;
-    }
+    private final String lowerCaseLetters = "abcçdeəfgğhxıijkqlmnoöprsştuüvyz";
+    private final String upperCaseLetters = "ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ";
 
     @Override
     public int compare(String a, String b) {
@@ -38,29 +16,29 @@ public class AzerbaijaniWordsComparator implements Comparator<String> {
                     if (aa == bb) {
                         continue;
                     } else {
-                        int indexAA = findIndexOfLowerCaseLetter(aa);
-                        int indexBB = findIndexOfLowerCaseLetter(bb);
+                        int indexAA = lowerCaseLetters.indexOf(aa);
+                        int indexBB = lowerCaseLetters.indexOf(bb);
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isUpperCase(aa) && Character.isUpperCase(bb)) {
                     if (aa == bb) {
                         continue;
                     } else {
-                        int indexAA = findIndexOfUpperCaseLetter(aa);
-                        int indexBB = findIndexOfUpperCaseLetter(bb);
+                        int indexAA = upperCaseLetters.indexOf(aa);
+                        int indexBB = upperCaseLetters.indexOf(bb);
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isLowerCase(aa) && Character.isUpperCase(bb)) {
-                    int indexAA = findIndexOfLowerCaseLetter(aa);
-                    int indexBB = findIndexOfUpperCaseLetter(bb);
+                    int indexAA = lowerCaseLetters.indexOf(aa);
+                    int indexBB = upperCaseLetters.indexOf(bb);
                     if (indexAA == indexBB) {
                         continue;
                     } else {
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isUpperCase(aa) && Character.isLowerCase(bb)) {
-                    int indexAA = findIndexOfUpperCaseLetter(aa);
-                    int indexBB = findIndexOfLowerCaseLetter(bb);
+                    int indexAA = upperCaseLetters.indexOf(aa);
+                    int indexBB = lowerCaseLetters.indexOf(bb);
                     if (indexAA == indexBB) {
                         continue;
                     } else {
@@ -77,29 +55,29 @@ public class AzerbaijaniWordsComparator implements Comparator<String> {
                     if (aa == bb) {
                         continue;
                     } else {
-                        int indexAA = findIndexOfLowerCaseLetter(aa);
-                        int indexBB = findIndexOfLowerCaseLetter(bb);
+                        int indexAA = lowerCaseLetters.indexOf(aa);
+                        int indexBB = lowerCaseLetters.indexOf(bb);
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isUpperCase(aa) && Character.isUpperCase(bb)) {
                     if (aa == bb) {
                         continue;
                     } else {
-                        int indexAA = findIndexOfUpperCaseLetter(aa);
-                        int indexBB = findIndexOfUpperCaseLetter(bb);
+                        int indexAA = upperCaseLetters.indexOf(aa);
+                        int indexBB = upperCaseLetters.indexOf(bb);
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isLowerCase(aa) && Character.isUpperCase(bb)) {
-                    int indexAA = findIndexOfLowerCaseLetter(aa);
-                    int indexBB = findIndexOfUpperCaseLetter(bb);
+                    int indexAA = lowerCaseLetters.indexOf(aa);
+                    int indexBB = upperCaseLetters.indexOf(bb);
                     if (indexAA == indexBB) {
                         continue;
                     } else {
                         return indexAA < indexBB ? -1 : 1;
                     }
                 } else if (Character.isUpperCase(aa) && Character.isLowerCase(bb)) {
-                    int indexAA = findIndexOfUpperCaseLetter(aa);
-                    int indexBB = findIndexOfLowerCaseLetter(bb);
+                    int indexAA = upperCaseLetters.indexOf(aa);
+                    int indexBB = lowerCaseLetters.indexOf(bb);
                     if (indexAA == indexBB) {
                         continue;
                     } else {
